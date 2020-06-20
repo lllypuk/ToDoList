@@ -1,5 +1,7 @@
 package ru.shatrov.todolist;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +13,8 @@ import java.util.Arrays;
 @SpringBootApplication
 public class ToDoListApp {
 
+	Logger logger = LoggerFactory.getLogger(ToDoListApp.class);
+
 	public static void main(String[] args) {
 		SpringApplication.run(ToDoListApp.class, args);
 	}
@@ -19,14 +23,13 @@ public class ToDoListApp {
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
+			logger.info("Let's inspect the beans provided by Spring Boot:");
 
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
 			for (String beanName : beanNames) {
-				System.out.println(beanName);
+				logger.info(beanName);
 			}
-
 		};
 	}
 }

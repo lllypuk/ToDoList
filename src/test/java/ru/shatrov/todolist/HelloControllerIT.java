@@ -9,6 +9,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 
 import java.net.URL;
+import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,9 +30,9 @@ public class HelloControllerIT {
     }
 
     @Test
-    public void getHello() throws Exception {
+    public void getHello() {
         ResponseEntity<String> response = template.getForEntity(base.toString(),
                 String.class);
-        assertThat(response.getBody().equals("Greetings from Spring Boot!"));
+        assertThat(Objects.equals(response.getBody(), "Greetings from Spring Boot!"));
     }
 }
