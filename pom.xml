@@ -11,7 +11,7 @@
     <name>todolist</name>
 
     <modules>
-        <module>server</module>
+        <module>todolist-app</module>
 <!--        <module>client</module>-->
     </modules>
 

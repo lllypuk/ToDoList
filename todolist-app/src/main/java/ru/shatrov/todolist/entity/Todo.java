@@ -4,47 +4,47 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "task")
-public class Task {
+@Document(collection = "Todo")
+public class Todo {
 
     @Id
     private String id;
 
     @Indexed
-    private String todo;
+    private String name;
 
     private Boolean done = false;
 
-    public Task() {
+    public Todo() {
     }
 
-    public Task(String id, String todo, Boolean done) {
+    public Todo(String id, String name, Boolean done) {
         this.id = id;
-        this.todo = todo;
+        this.name = name;
         this.done = done;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Task[id=%s, todo='%s', done='%s']",
-                id, todo, done);
+                "Task[id=%s, name='%s', done='%s']",
+                id, name, done);
     }
 
     public String getId() {
         return id;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getName() {
+        return name;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Boolean getDone() {
