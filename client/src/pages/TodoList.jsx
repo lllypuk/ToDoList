@@ -65,10 +65,11 @@ class TodoList extends Component {
         this.setState({ isLoading: true })
 
         await api.getAllTodolist().then(result => {
-            console.log('TCL: TodoList -> render -> todolist', result)
+            const data = result.data
+            console.log('TCL: TodoList -> render -> todolist', data)
 
             this.setState({
-                todolist: result.data._embedded.todolist,
+                todolist: data._embedded.todolist,
                 isLoading: false,
             })
         })
