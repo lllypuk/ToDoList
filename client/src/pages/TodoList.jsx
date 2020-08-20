@@ -64,9 +64,11 @@ class TodoList extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true })
 
-        await api.getAllTodolist().then(todolist => {
+        await api.getAllTodolist().then(result => {
+            console.log('TCL: TodoList -> render -> todolist', result)
+
             this.setState({
-                todolist: todolist,
+                todolist: result.data._embedded.todolist,
                 isLoading: false,
             })
         })
@@ -74,7 +76,6 @@ class TodoList extends Component {
 
     render() {
       const { todolist, isLoading } = this.state
-      console.log('TCL: TodoList -> render -> todolist', todolist)
 
       const columns = [
           {
