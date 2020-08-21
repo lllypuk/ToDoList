@@ -51,7 +51,7 @@ class TodoInsert extends Component {
     }
 
     handleChangeInputDone = async event => {
-        const done = event.target.value
+        const done = event.target.checked
         this.setState({ done })
     }
 
@@ -60,12 +60,14 @@ class TodoInsert extends Component {
         const payload = { name, done }
 
         await api.insertTodolist(payload).then(res => {
-            window.alert(`Todo inserted successfully`)
+            window.alert(`Todo inserted successfully` + res)
             this.setState({
                 name: '',
                 done: false,
             })
-        })
+        }).catch(error => {
+            console.log(error);
+        });
     }
 
     render() {

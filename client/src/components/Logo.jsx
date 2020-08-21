@@ -10,7 +10,7 @@ const Wrapper = styled.a.attrs({
 class Logo extends Component {
     render() {
         return (
-            <Wrapper href="http://localhost:8089">
+            <Wrapper href="http://localhost:3000/">
                 <img src={logo} width="50" height="50" alt="localhost" />
             </Wrapper>
         )
