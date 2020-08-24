@@ -18,6 +18,11 @@ public class Todo {
     public Todo() {
     }
 
+    public Todo(String name, Boolean done) {
+        this.name = name;
+        this.done = done;
+    }
+
     public Todo(String id, String name, Boolean done) {
         this.id = id;
         this.name = name;
