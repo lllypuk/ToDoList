@@ -10,7 +10,6 @@ public class Todo {
     @Id
     private String id;
 
-    @Indexed
     private String name;
 
     private Boolean done = false;
