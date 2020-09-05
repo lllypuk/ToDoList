@@ -60,7 +60,7 @@ class TodoInsert extends Component {
         const payload = { name, done }
 
         await api.insertTodolist(payload).then(res => {
-            window.alert(`Todo inserted successfully` + res)
+            window.alert(`Todo inserted successfully`)
             this.setState({
                 name: '',
                 done: false,

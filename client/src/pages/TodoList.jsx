@@ -66,7 +66,6 @@ class TodoList extends Component {
 
         await api.getAllTodolist().then(result => {
             const data = result.data
-            console.log('TCL: TodoList -> render -> todolist', data)
 
             this.setState({
                 todolist: data._embedded.todolist,
@@ -83,6 +82,7 @@ class TodoList extends Component {
               Header: 'ID',
               accessor: 'id',
               filterable: true,
+              show: false
           },
           {
               Header: 'Name',

@@ -52,7 +52,7 @@ class TodoUpdate extends Component {
     }
 
     handleChangeInputDone = async event => {
-        const done = event.target.value
+        const done = event.target.checked
         this.setState({ done })
     }
 
@@ -71,11 +71,14 @@ class TodoUpdate extends Component {
 
     componentDidMount = async () => {
         const { id } = this.state
-        const todo = await api.getTodolistById(id)
+        await api.getTodolistById(id).then(result =>
+        {
+            const data = result.data;
 
-        this.setState({
-            name: todo.name,
-            done: todo.done,
+            this.setState({
+                name: data.name,
+                done: data.done,
+            })
         })
     }
 
@@ -83,7 +86,7 @@ class TodoUpdate extends Component {
         const { name, done } = this.state
         return (
             <Wrapper>
-                <Title>Create Todo</Title>
+                <Title>Update Todo</Title>
 
                 <Label>Name: </Label>
                 <InputText
