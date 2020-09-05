@@ -90,9 +90,10 @@ class TodoList extends Component {
               filterable: true,
           },
           {
+              id: 'done',
               Header: 'Done',
-              accessor: 'done',
-              filterable: true,
+              accessor: d => d.done ? 'Done' : 'In work',
+              filterable: false,
           },
             {
                 Header: '',
