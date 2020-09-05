@@ -71,11 +71,11 @@ class TodoUpdate extends Component {
 
     componentDidMount = async () => {
         const { id } = this.state
-        const movie = await api.getMovieById(id)
+        const todo = await api.getTodolistById(id)
 
         this.setState({
-            name: movie.data.data.name,
-            done: movie.data.data.done,
+            name: todo.name,
+            done: todo.done,
         })
     }
 

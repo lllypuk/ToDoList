@@ -81,7 +81,7 @@ class TodoList extends Component {
       const columns = [
           {
               Header: 'ID',
-              accessor: '_id',
+              accessor: 'id',
               filterable: true,
           },
           {
@@ -100,7 +100,7 @@ class TodoList extends Component {
                 Cell: function(props) {
                     return (
                         <span>
-                            <DeleteTodo id={props.original._id} />
+                            <DeleteTodo id={props.original.id} />
                         </span>
                     )
                 },
@@ -111,7 +111,7 @@ class TodoList extends Component {
                 Cell: function(props) {
                     return (
                         <span>
-                            <UpdateTodo id={props.original._id} />
+                            <UpdateTodo id={props.original.id} />
                         </span>
                     )
                 },

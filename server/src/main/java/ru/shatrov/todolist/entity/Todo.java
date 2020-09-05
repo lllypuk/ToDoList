@@ -10,7 +10,6 @@ import lombok.Data;
 @Document(collection = "Todo")
 public class Todo {
 
-    @NonNull
     @Id
     private String id;
 
